@@ -79,6 +79,12 @@
   --bs-highlight-bg: #fff4cc;
 }
 
+/* Custom: Left-align tech/detail modal content and preserve newlines */
+#techInfoModalBody {
+  text-align: left;
+  white-space: pre-line;
+}
+
 *,
 *::before,
 *::after {
@@ -11053,6 +11059,57 @@ header.masthead .masthead-heading {
 }
 .portfolio-modal .modal-content ul.list-inline {
   margin-bottom: 2rem;
+  text-align: left;
+}
+
+.portfolio-modal .modal-content ul.list-inline a {
+  text-decoration-line: none;
+  color: #000;
+}
+
+/* Tech stack icon grid inside portfolio modals */
+.portfolio-modal .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  justify-content: flex-start;
+  margin-top: 0.5rem;
+}
+.portfolio-modal .tech-item {
+  width: 110px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFC800;
+  border-radius: 0.75rem;
+  padding: 0.6rem 0.4rem;
+  box-shadow: 0 6px 14px rgba(33,37,41,0.06);
+  transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+.portfolio-modal .tech-item i {
+  font-size: 1.6rem;
+  color: #fff;
+}
+.portfolio-modal .tech-item .tech-label {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .portfolio-modal .tech-item {
+    width: 45%;
+  }
+}
+
+.portfolio-modal .tech-item:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(33,37,41,0.12);
+  background: #e6ad00;
+}
+.portfolio-modal .tech-item:active {
+  transform: translateY(-2px) scale(0.995);
 }
 .portfolio-modal .modal-content img {
   margin-bottom: 2rem;
